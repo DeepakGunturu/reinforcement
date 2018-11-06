@@ -19,10 +19,11 @@
 # Set the given parameters to obtain the specified policies through
 # value iteration.
 
+# Setting the answer discount and noise parameters for question 2
 def question2():
     answerDiscount = 0.9
-    answerNoise = 0.2
-    return answerDiscount, answerNoise
+    answerNoise = 0.0
+    return answerDiscount,answerNoise
 
 def question3a():
     answerDiscount = None
