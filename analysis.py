@@ -25,39 +25,40 @@ def question2():
     answerNoise = 0.0
     return answerDiscount,answerNoise
 
+# Setting the answer discount, living reward, and noise parameters for question 3
 def question3a():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
-    return answerDiscount, answerNoise, answerLivingReward
+    answerDiscount = 0.9
+    answerNoise = 0.01
+    answerLivingReward = -4
+    return answerDiscount,answerNoise,answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
 def question3b():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
-    return answerDiscount, answerNoise, answerLivingReward
+    answerDiscount = 0.06
+    answerNoise = 0.001
+    answerLivingReward = 0
+    return answerDiscount,answerNoise,answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
 def question3c():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
-    return answerDiscount, answerNoise, answerLivingReward
+    answerDiscount = 0.9
+    answerNoise = 0.0
+    answerLivingReward = 0.001
+    return answerDiscount,answerNoise,answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
 def question3d():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
-    return answerDiscount, answerNoise, answerLivingReward
+    answerDiscount = 0.9
+    answerNoise = 0.4
+    answerLivingReward = 0
+    return answerDiscount,answerNoise,answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
 def question3e():
-    answerDiscount = None
-    answerNoise = None
-    answerLivingReward = None
-    return answerDiscount, answerNoise, answerLivingReward
+    answerDiscount = 0.9
+    answerNoise = 0.9
+    answerLivingReward = 9
+    return answerDiscount,answerNoise,answerLivingReward
     # If not possible, return 'NOT POSSIBLE'
 
 def question6():
