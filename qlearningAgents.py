@@ -152,7 +152,6 @@ class PacmanQAgent(QLearningAgent):
         These default parameters can be changed from the pacman.py command line.
         For example, to change the exploration rate, try:
             python pacman.py -p PacmanQLearningAgent -a epsilon=0.1
-
         alpha    - learning rate
         epsilon  - exploration rate
         gamma    - discount factor
@@ -179,7 +178,6 @@ class PacmanQAgent(QLearningAgent):
 class ApproximateQAgent(PacmanQAgent):
     """
        ApproximateQLearningAgent
-
        You should only have to overwrite getQValue
        and update.  All other QLearningAgent functions
        should work as is.
@@ -198,15 +196,24 @@ class ApproximateQAgent(PacmanQAgent):
           where * is the dotProduct operator
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        totQVal = 0
+
+        # Going through the features that are extracted and computing the Q-value based on the features and weights
+        for idx in self.featExtractor.getFeatures(state, action):
+            totQVal += ((self.getWeights())[idx]*(self.featExtractor.getFeatures(state, action))[idx])
+        return totQVal
 
     def update(self, state, action, nextState, reward):
         """
            Should update your weights based on transition
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
-
+        tmp = ((reward + self.discount * self.computeValueFromQValues(nextState))-self.getQValue(state, action))
+        
+        # Updating the weights based on the transitions and the features extracted
+        for idx in self.featExtractor.getFeatures(state, action):
+            self.weights[idx] = self.weights[idx] + self.alpha * (self.featExtractor.getFeatures(state, action))[idx] * (tmp)
+        
     def final(self, state):
         "Called at the end of each game."
         # call the super-class final method
